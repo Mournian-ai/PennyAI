@@ -10,5 +10,5 @@ class TwitchChatService:
         self.settings = settings
         
     def start(self):
-        # connect to IRC
-        pass
+        # placeholder for connecting to Twitch chat
+        print("TwitchChatService connected")

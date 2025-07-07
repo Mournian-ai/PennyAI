@@ -17,5 +17,8 @@ class Settings(BaseSettings):
     # ChromaDB
     chroma_db_path: str = Field("./chromadb", env="CHROMA_DB_PATH")
 
+    # Remote memory service
+    memory_server_url: str = Field("http://192.168.0.124:8050", env="MEMORY_SERVER_URL")
+
     class Config:
         env_file = ".env"

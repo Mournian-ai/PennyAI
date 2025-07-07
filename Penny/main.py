@@ -16,7 +16,7 @@ def main():
     eventsub = EventSubService(event_bus, settings)
     twitch_chat = TwitchChatService(event_bus, settings)
     memory = MemoryService(event_bus, settings)
-    openai = OpenAIService(event_bus, settings)
+    openai = OpenAIService(event_bus, settings, memory)
     queue = QueueService(event_bus)
     speaking = SpeakingService(event_bus, settings)
 
