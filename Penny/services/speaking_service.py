@@ -1,7 +1,7 @@
 from core.event_bus import EventBus
 from models.event_models import PennyResponse
-# you will use:
-# import requests
+import requests
+import asyncio
 
 class SpeakingService:
     def __init__(self, event_bus: EventBus, settings):
@@ -9,6 +9,13 @@ class SpeakingService:
         self.settings = settings
         self.event_bus.subscribe("speak", self.speak)
 
-    def speak(self, penny_response: PennyResponse):
-        # send penny_response.text to your Coqui TTS server
-        pass
+    async def speak(self, penny_response: PennyResponse):
+        try:
+            await asyncio.to_thread(
+                requests.post,
+                self.settings.tts_server_url,
+                json={"text": penny_response.text},
+                timeout=5,
+            )
+        except Exception as e:
+            print(f"TTS request failed: {e}")
