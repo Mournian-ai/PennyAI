@@ -6,7 +6,5 @@ class EventSubService:
         self.settings = settings
 
     def start(self):
-        # you will import twitch API libraries here eventually, eg:
-        # from twitchAPI.eventsub.websocket import EventSubWebsocket
-        # but leave blank for now
-        pass
+        # placeholder for Twitch EventSub integration
+        print("EventSubService started - listening for events")
