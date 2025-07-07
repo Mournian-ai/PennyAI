@@ -1,0 +1,22 @@
+# Core framework
+pydantic==2.11.7
+pydantic-settings==2.2.1
+
+# Twitch (for IRC and EventSub)
+twitchio==2.9.0
+twitchAPI==2.7.0
+
+# OpenAI client
+openai==1.30.1
+
+# Vector store
+chromadb==0.4.24
+
+# For .env loading (optional but recommended)
+python-dotenv==1.0.1
+
+# HTTP requests
+requests==2.31.0
+
+# Typing helpers
+typing-extensions>=4.5.0
