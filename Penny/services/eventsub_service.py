@@ -12,6 +12,7 @@ class EventSubService:
         self.eventsub = None
         self.channel_id = None
 
+
     async def start(self):
         await self.twitch.authenticate_app([])
         await self.twitch.set_user_authentication(self.settings.twitch_bot_token, [], None)
@@ -57,3 +58,7 @@ class EventSubService:
 
     async def _on_hype_end(self, data):
         await self._dispatch("hype_train_end", data)
+        def start(self):
+        # placeholder for Twitch EventSub integration
+        print("EventSubService started - listening for events")
+

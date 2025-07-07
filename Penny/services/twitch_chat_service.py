@@ -35,3 +35,6 @@ class TwitchChatService(commands.Bot):
         chan = self.get_channel(self.settings.twitch_channel)
         if chan:
             await chan.send(text)
+        # placeholder for connecting to Twitch chat
+        print("TwitchChatService connected")
+

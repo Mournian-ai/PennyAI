@@ -1,5 +1,7 @@
 from core.event_bus import EventBus
 from models.event_models import ChatMessage, PennyResponse
+from models.event_models import ChatMessage
+
 import requests
 
 class MemoryService:
