@@ -1,4 +1,4 @@
-# PennyAI
+# PennyAI(WIP Wont work unless you setup a Coqui TTS Server, and a ChromaDB with Fast API, can use localhost if all on same machine or could reconfigure to use web sockets)
 
 PennyAI is a prototype Twitch chatbot that uses OpenAI to respond to viewers with a playful personality. It can store conversation history via a memory service and synthesize replies through a TTS server.
 
