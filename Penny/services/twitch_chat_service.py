@@ -3,6 +3,9 @@ from models.event_models import ChatMessage
 from datetime import datetime
 from twitchio.ext import commands
 import threading
+import logging
+
+logger = logging.getLogger(__name__)
 
 class TwitchChatService(commands.Bot):
     def __init__(self, event_bus: EventBus, settings):
@@ -19,7 +22,7 @@ class TwitchChatService(commands.Bot):
         threading.Thread(target=self.run, daemon=True).start()
 
     async def event_ready(self):
-        print(f"TwitchChatService connected as {self.nick}")
+        logger.info("TwitchChatService connected as %s", self.nick)
 
     async def event_message(self, message):
         if message.echo:
@@ -35,6 +38,4 @@ class TwitchChatService(commands.Bot):
         chan = self.get_channel(self.settings.twitch_channel)
         if chan:
             await chan.send(text)
-        # placeholder for connecting to Twitch chat
-        print("TwitchChatService connected")
 
