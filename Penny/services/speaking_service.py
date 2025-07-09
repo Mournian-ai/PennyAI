@@ -12,12 +12,10 @@ class SpeakingService:
 
 
     async def speak(self, penny_response: PennyResponse):
+        """Send the penny response text to the TTS server."""
         try:
             await asyncio.to_thread(
                 requests.post,
-    def speak(self, penny_response: PennyResponse):
-        try:
-            requests.post(
                 self.settings.tts_server_url,
                 json={"text": penny_response.text},
                 timeout=5,
