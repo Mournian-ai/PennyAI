@@ -1,6 +1,8 @@
 # core/event_bus.py
 
 from collections import defaultdict
+import asyncio
+import inspect
 
 class EventBus:
     def __init__(self):
@@ -11,4 +13,7 @@ class EventBus:
 
     def publish(self, event_name, data=None):
         for callback in self._subscribers[event_name]:
-            callback(data)
+            if inspect.iscoroutinefunction(callback):
+                asyncio.create_task(callback(data))
+            else:
+                callback(data)
