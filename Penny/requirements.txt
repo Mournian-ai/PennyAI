@@ -1,19 +1,19 @@
 # Core dependencies
-pydantic
-pydantic-settings
+pydantic==2.7.1
+pydantic-settings==2.2.1
 
 # Twitch
-twitchio
-twitchAPI
+twitchio==2.7.1
+twitchAPI==2.7.0
 
 # OpenAI client
-openai
+openai==1.10.0
 
 # Vector database
-chromadb
+chromadb==0.4.22
 
 # Environment variable loader
-python-dotenv
+python-dotenv==1.0.1
 
 # HTTP requests
-requests
+requests==2.31.0
